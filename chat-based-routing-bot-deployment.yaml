@@ -1,0 +1,42 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: chat-based-routing-bot
+  labels:
+    name: chat-based-routing-bot
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: chat-based-routing-bot
+spec:
+  selector:
+    matchLabels:
+      app: chat-based-routing-bot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: chat-based-routing-bot
+    spec:
+      containers:
+        - image: 191518685251.dkr.ecr.us-west-1.amazonaws.com/chat-based-routing-bot:latest
+          imagePullPolicy: Always
+          name: chat-based-routing-bot
+          ports:
+            - containerPort: 10031
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: chat-based-routing-bot-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 10031
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: chat-based-routing-bot
