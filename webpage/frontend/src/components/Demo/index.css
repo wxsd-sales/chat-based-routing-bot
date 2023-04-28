@@ -1,0 +1,99 @@
+.navDemo {
+  width: 100%;
+  background: #3f3fe0;
+  height: 80px;
+  top: 0;
+  z-index: 999;
+  position: sticky;
+}
+
+.navContainerDemo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navLeftDemo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLinksDemo {
+  margin-left: 40px;
+  display: flex;
+  gap: 15px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+.navIconDemo {
+  font-size: 14px;
+  margin-bottom: -4px;
+  font-weight: 700;
+  color: navy;
+}
+
+.navLogoImgDemo {
+  width: 40px;
+  height: 40px;
+}
+.navLogoDemo {
+  display: flex;
+  align-items: center;
+}
+.navLogoTextDemo {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.navRightDemo {
+  display: flex;
+}
+.navButtonsDemo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navButtonADemo {
+  height: 40px;
+  background: rgb(63, 63, 224);
+  width: 120px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid transparent;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 50px;
+}
+.navButtonBDemo {
+  height: 40px;
+  width: 120px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 3px solid #000;
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+}
+
+.navButtonADemo:hover {
+  border-color: rgb(63, 63, 224);
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.navButtonBDemo:hover {
+  opacity: 0.7;
+}

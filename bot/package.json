@@ -1,0 +1,28 @@
+{
+  "name": "engagementbot",
+  "version": "1.0.0",
+  "description": "Center of Excellent New Engagement Bot",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "author": "Taylor Hanson",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "mongodb": "^4.1.2",
+    "smartsheet": "^2.126.0",
+    "webex": "^1.141.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "2.7.1"
+  }
+}

@@ -1,0 +1,206 @@
+.nav {
+  width: 100%;
+  background: #fff;
+  height: 70px;
+  top: 0;
+  z-index: 999;
+  position: sticky;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navLeft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLinks {
+  margin-left: 40px;
+  display: flex;
+  gap: 15px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+.navIcon {
+  font-size: 14px;
+  margin-bottom: -4px;
+  font-weight: 700;
+  color: navy;
+}
+
+.navLogoImg {
+  width: 40px;
+  height: 40px;
+}
+.navLogo {
+  display: flex;
+  align-items: center;
+}
+.navLogoText {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #6cb2eb;
+}
+
+.navRight {
+  display: flex;
+}
+.navButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navButtonA {
+  height: 40px;
+  background: rgb(63, 63, 224);
+  width: 120px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid transparent;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 50px;
+}
+.navButtonB {
+  height: 40px;
+  width: 120px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 3px solid #000;
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+}
+
+.navButtonA:hover {
+  border-color: rgb(63, 63, 224);
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.navButtonB:hover {
+  opacity: 0.7;
+}
+.background {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.bgImage {
+  height: auto;
+}
+.hannaBg {
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bgIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bgIconB {
+  font-size: 50px;
+  background: rgb(65, 57, 57);
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  z-index: 2;
+  margin-left: 40px;
+  margin-top: -130px;
+  border-radius: 50px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.bgIconA {
+  font-size: 35px;
+  background: rgb(63, 63, 224);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  z-index: 2;
+  margin-left: 40px;
+  margin-top: -40px;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bgText {
+  text-align: center;
+  margin-top: -800px;
+  margin-left: 1700px;
+  width: 550px;
+  z-index: 2;
+}
+
+.mainText {
+  text-align: center;
+  width: 20%;
+  display: flex;
+  background-color: grey;
+}
+
+.bgText h1 {
+  color: rgb(255, 255, 255);
+  font-size: 100px;
+}
+.bgText h3 {
+  color: #6cb2eb;
+  margin: 30px;
+  font-weight: 400;
+  font-size: 37px;
+}
+.bgText p {
+  color: white;
+  font-size: 25px;
+  line-height: 1.8;
+  margin: 50px;
+}
+
+@media screen and (max-width: 2000px) {
+  .bgText {
+    margin-top: -33%;
+    margin-left: 70%;
+    width: 370px;
+  }
+  .bgText h1 {
+    font-size: 80px;
+    margin: 20px;
+  }
+  .bgText h3 {
+    font-size: 30px;
+    margin: 20px;
+  }
+  .bgText p {
+    font-size: 18px;
+    margin: 20px;
+    line-height: 1.5;
+  }
+}

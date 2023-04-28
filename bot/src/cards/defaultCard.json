@@ -1,0 +1,95 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "style": "Person",
+              "size": "Medium",
+              "height": "50px"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Webex Chat based Routing",
+              "weight": "Lighter"
+            },
+            {
+              "type": "TextBlock",
+              "weight": "Bolder",
+              "text": "Engagement Request",
+              "wrap": true,
+              "size": "Large",
+              "spacing": "Small"
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Request Type:",
+      "wrap": true
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "placeholder": "--select--",
+      "spacing": "None",
+      "id": "request_type"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Additional Comments:",
+      "wrap": true
+    },
+    {
+      "type": "Input.Text",
+      "placeholder": "Please describe how we can assist. ",
+      "isMultiline": true,
+      "spacing": "None",
+      "id": "comments"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Warning: This is the default card. You can customize your bot by clicking on customize button below",
+      "wrap": true,
+      "color": "Attention"
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "Submit",
+          "id": "submit",
+          "data": {
+            "submit": "main"
+          }
+        },
+        {
+          "type": "Action.OpenUrl",
+          "title": "Customize",
+          "url": "https://chat-based-routing.wbx.ninja"
+        },
+        {
+          "type": "Action.OpenUrl",
+          "title": "About Me",
+          "url": "https://github.com/wxsd-sales/chat-based-routing-bot/blob/main/README.md"
+        }
+      ]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2"
+}

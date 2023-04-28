@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: chat-based-routing-webpage
+spec:
+  selector:
+    matchLabels:
+      app: chat-based-routing-webpage
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: chat-based-routing-webpage
+    spec:
+      containers:
+        - image: 191518685251.dkr.ecr.us-west-1.amazonaws.com/chat-based-routing-webpage:latest
+          imagePullPolicy: Always
+          name: chat-based-routing-webpage
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: chat-based-routing-webpage-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: chat-based-routing-webpage
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: default
+  name: chat-based-routing-webpage-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:191518685251:certificate/e7ac80fc-9195-4d5f-af14-5ef12281ada8
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: ssl-redirect
+                port:
+                  name: use-annotation
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: chat-based-routing-webpage-service
+                port:
+                  number: 80
